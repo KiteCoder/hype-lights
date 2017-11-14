@@ -1,0 +1,45 @@
+*.log
+*.pyc
+.DS_Store
+.cached_templates/
+cached_templates/
+__pycache__/
+
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+
+
+# Exclude the .htaccess file
+.htaccess
+
+# Exclude any PSD/AI source
+*.psd
+*.ai
+
+# Exclude the build products
+build/*
+*.[oa]
+
+# Exclude OS X folder attributes
+.DS_Store
+
+# Exclude Text Files
+*.txt
+# Except read me
+!README.txt
+
+# Exclude log files
+*.log
+
+# Exclude Fonts
+_fonts/
+
+# exclude django fies
+
+
+.DS_Store
+migrations
+
+*.xlsx
