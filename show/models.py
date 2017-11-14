@@ -26,7 +26,7 @@ class Show(models.Model):
 
 class Frame(models.Model):
 
-    frequency_value = models.FloatField(null=False, blank=False)
+    frequency_value = models.IntegerField(null=False, blank=False)
     time = models.FloatField(null=False, blank=False)
     order = models.IntegerField(null=False, blank=False)
     show = models.ForeignKey(Show, null=False, blank=False)
