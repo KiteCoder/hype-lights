@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'show',
     'mobile'
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,7 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
 
@@ -82,9 +81,10 @@ DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'hype',
-        'USER': 'postgres',
+        'USER':'postgres',
         'PASSWORD':'password',
-        'HOST':'localhost',
+        'HOST':'127.0.0.1',
+        'PORT':'5432'
 
     },
     # 'default': {

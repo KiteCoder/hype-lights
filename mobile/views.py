@@ -13,5 +13,3 @@ def get_config_json(request):
         return JsonResponse(config_builder.build_config_json(row, seat, name))
     except:
         return JsonResponse({'Error': 'internal service error'})
-
-
