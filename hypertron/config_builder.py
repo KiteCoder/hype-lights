@@ -1,6 +1,6 @@
 ## Show Functions
 
-from show import models
+from hypertron import models
 
 ## Build  Config String
 ## When users request config string it will be built dynamically, We can adjust the position of the logic if we need to

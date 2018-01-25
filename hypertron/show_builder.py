@@ -1,6 +1,6 @@
 ## Show Functions
 
-from show import models
+from hypertron import models
 
 def create_show(name):
 

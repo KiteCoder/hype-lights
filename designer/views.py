@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from show import show_builder
+from hypertron import show_builder
 
 
 def create_show(request):

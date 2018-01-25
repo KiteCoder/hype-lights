@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from show import config_builder
+from hypertron import config_builder
 
 
 def get_config_json(request):
