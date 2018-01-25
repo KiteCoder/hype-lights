@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'hypertron',
     'mobile',
     'designer'
+    'account'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'hype',
         'USER':'postgres',
-        'PASSWORD':'C00mie91',
+        'PASSWORD':'password',
         'HOST':'127.0.0.1',
         'PORT':'5432'
 
