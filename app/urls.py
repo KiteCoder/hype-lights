@@ -13,6 +13,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
 
+    # Account pages
+    url(r'^account/login', account_views.login)
+    url(r'^account/signup', account_views.signup)
+
     # Mobile Endpoints
     url(r'^mobile/pattern_request', mobile_views.get_config_json, name='get_config_json'),
 
@@ -26,5 +30,5 @@ urlpatterns = [
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
 
 
-    
+
 ]
