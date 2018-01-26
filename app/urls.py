@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^designer/create_pixel', designer_views.create_pixel, name='create_pixel'),
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
 
+
+    
 ]
