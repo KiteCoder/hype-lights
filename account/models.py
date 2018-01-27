@@ -10,6 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 # NOTE: I grabbed this from https://medium.com/@ramykhuffash/django-authentication-with-just-an-email-and-password-no-username-required-33e47976b517
 
+# NOTE: We will probably need this info for when making login forms and such: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#custom-users-and-the-built-in-auth-forms
+
+# NOTE: We will probably need this info for more things as well: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#a-full-example
+
 class MyUserManager(BaseUserManager):
     """
     A custom user manager to deal with emails as unique identifiers for auth
@@ -38,7 +42,7 @@ class MyUserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
         return self._create_user(email, password, **extra_fields)
 
-
+# NOTE: May want to set is_active to false for the default if we want to force email verification.
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, null=True)
     is_staff = models.BooleanField(
