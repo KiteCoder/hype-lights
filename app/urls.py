@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 # App imports
 from mobile import views as mobile_views
@@ -14,8 +15,9 @@ urlpatterns = [
 
 
     # Account pages
-    url(r'^account/login', account_views.login)
-    url(r'^account/signup', account_views.signup)
+    url(r'^login/$', auth_views.login, {'template_name': 'account/templates/login.html'}, name='login'),
+
+    url(r'^logout/$', auth_views.logout, name='logout'),
 
     # Mobile Endpoints
     url(r'^mobile/pattern_request', mobile_views.get_config_json, name='get_config_json'),

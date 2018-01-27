@@ -1,14 +1,13 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-  <form id="loginform" action="/account/login/" method="POST">
-    <table>
-      <!-- ${ form.as_table() } -->
-<!-- need to figure out how to use forms in normal django templating -->
-
-    </table>
-    <input type="submit" value="Login" class="btn btn-warning"/>
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
   </form>
 
 {% endblock content %}
+

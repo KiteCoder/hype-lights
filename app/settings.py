@@ -39,8 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'hypertron',
     'mobile',
-    'designer'
-    'account'
+    'designer',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
