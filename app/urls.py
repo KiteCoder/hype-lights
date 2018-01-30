@@ -5,6 +5,7 @@ from django.contrib.auth import views as auth_views
 # App imports
 from mobile import views as mobile_views
 from designer import views as designer_views
+from account import views as account_views
 
 urlpatterns = [
     # Examples:
@@ -15,9 +16,8 @@ urlpatterns = [
 
 
     # Account pages
-    url(r'^login/$', auth_views.login, {'template_name': 'account/templates/login.html'}, name='login'),
-
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^account/login/$', account_views.login, name='login'), #very basic function, not real login yet
+    url(r'^account/index/$', account_views.index, name='index'),
 
     # Mobile Endpoints
     url(r'^mobile/pattern_request', mobile_views.get_config_json, name='get_config_json'),
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^designer/create_pixel', designer_views.create_pixel, name='create_pixel'),
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
 
+    # Designer webpages
 
 
 ]
