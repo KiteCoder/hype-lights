@@ -34,7 +34,7 @@ class SecondPixel(models.Model):
     class Meta:
         unique_together = ('pixel','second')
 
-    pixel = models.ForeignKey('Pixel', on_delete=models.PROTECT, null=False, blank=False)
+    pixel = models.ForeignKey('Pixel', on_delete=models.CASCADE, null=False, blank=False)
     second = models.ForeignKey('Second', on_delete=models.CASCADE, null=False, blank=False)
     state = models.TextField(null=False, blank=False)
 
@@ -43,3 +43,8 @@ class ContactPerson(models.Model):
     lastName = models.TextField(null=False, blank=False)
     email = models.TextField(null=True, blank=True)
     phone = models.TextField(null=True, blank=True)
+
+class ConfigArray(models.Model):
+    show = models.ForeignKey('Show', on_delete=models.CASCADE, null=False, blank=False)
+    seatLocation = models.TextField(null=False, blank=False)
+    configuration = models.TextField(null=False, blank=False)
