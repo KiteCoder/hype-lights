@@ -27,7 +27,7 @@
 
   <body>
 
-    <div>
+    <div name="navigation div">
 
       <nav class="blue" role="navigation">
 
@@ -38,6 +38,7 @@
           <ul class="right hide-on-med-and-down">
 
             <li><a href="#">Navbar Link</a></li>
+            <!-- <li>just some text</li> -->
 
           </ul>
 
@@ -55,9 +56,14 @@
 
     </div>
 
-  	<div>
-  		{%block content%}{% endblock content%}
+  	<div class="row">
+      <div class="col s6 offset-s3">
+        {%block content%}{% endblock content%}
+      </div>
+  		
   	</div>
+
+
 
   </body>
 
