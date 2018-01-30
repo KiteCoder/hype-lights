@@ -96,7 +96,7 @@ DATABASES = {
 }
 
 # Authorization User Model
-AUTH_USER_MODEL = 'account.User'
+AUTH_USER_MODEL = 'account.MyUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
