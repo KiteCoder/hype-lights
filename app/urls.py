@@ -15,7 +15,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name='logout'),
+    # url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
 
 

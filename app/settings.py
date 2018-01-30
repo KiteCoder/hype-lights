@@ -54,6 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+
+LOGIN_REDIRECT_URL = '/account/index'
+
 ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
