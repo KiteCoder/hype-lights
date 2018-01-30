@@ -1,4 +1,4 @@
-{% extends '/designer/templates/base.html' %}
+{% extends 'base.html' %}
 
 
 
@@ -8,6 +8,9 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+
+    <!-- need to figure out how to actually navigate to webpage to see if form works -->
+
     <button type="submit">Login</button>
   </form>
 
