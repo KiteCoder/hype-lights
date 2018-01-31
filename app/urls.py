@@ -22,7 +22,7 @@ urlpatterns = [
     # Account webpages
 
     # url(r'^account/login/$', account_views.login, name='login'), #very basic function, not real login yet
-    url(r'^account/index/$', account_views.index, name='index'),
+    url(r'^index/$', account_views.index, name='index'),
 
     # Mobile Endpoints
     url(r'^mobile/pattern_request', mobile_views.get_config_json, name='get_config_json'),

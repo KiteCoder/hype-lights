@@ -10,14 +10,14 @@ Login
 
 {% block content %}
 
-  <h2>Login</h2>
+  <h3>Login</h3>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
 
     <!-- need to figure out how to actually navigate to webpage to see if form works -->
 
-    <button type="submit">Login</button>
+    <button class="teal" type="submit">Login</button>
   </form>
 
 {% endblock content %}
