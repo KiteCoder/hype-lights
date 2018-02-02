@@ -3,6 +3,9 @@
 
   <head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <title>{% block title %}{% endblock title %}</title>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -56,15 +59,123 @@
 
     </div>
 
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Hype Lights</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end light show based on greatness</h5>
+        </div>
+        <div class="row center">
+          <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a> -->
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="https://i.imgur.com/oAQFimI.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+
   	<div class="row">
-      <div class="col s8 offset-s2">
+      <!-- <div class="col s8 offset-s2">
+        
+      </div> -->
+  		
+      <div class="col s12">
         {%block content%}{% endblock content%}
       </div>
-  		
+
   	</div>
 
-    
+    <div class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="https://i.imgur.com/35Lun7R.jpg" alt="Unsplashed background img 3"></div>
+  </div>
 
+  <div class="row">
+      <!-- <div class="col s8 offset-s2">
+        
+      </div> -->
+      
+      <div class="col s12">
+        {%block content1%}{% endblock content1%}
+      </div>
+
+  </div>
+
+
+  <div class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="https://i.imgur.com/kmw0vqM.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <div class="row">
+      <!-- <div class="col s8 offset-s2">
+        
+      </div> -->
+      
+      <div class="col s12">
+        {%block content2%}{% endblock content2%}
+      </div>
+
+  </div>
+
+
+ <div class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="https://i.imgur.com/VG2UvcY.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+<div class="row">
+      <!-- <div class="col s8 offset-s2">
+        
+      </div> -->
+      
+      <div class="col s12">
+        {%block content3%}{% endblock content3%}
+      </div>
+
+  </div>
+
+
+
+
+  
+
+    <script>
+      
+      (function($){
+        $(function(){
+
+          $('.button-collapse').sideNav();
+          $('.parallax').parallax();
+
+        }); // end of document ready
+      })(jQuery); // end of jQuery name space
+
+    </script>
 
   </body>
 
