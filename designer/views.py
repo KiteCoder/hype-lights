@@ -1,7 +1,12 @@
 from django.http import JsonResponse
 from hypertron import show_builder
+from django.shortcuts import render, redirect
 
 
+def index(request):
+  # return HttpResponse("Hello world, you have arrived at the index page" )
+
+  return render(request, 'index.html',)
 
 def create_show(request):
 

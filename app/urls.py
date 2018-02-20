@@ -15,6 +15,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+
     # url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
 
@@ -23,6 +24,8 @@ urlpatterns = [
 
     # url(r'^account/login/$', account_views.login, name='login'), #very basic function, not real login yet
     url(r'^index/$', account_views.index, name='index'),
+    url(r'^signup/$', account_views.signup, name='signup'),
+
 
     # Mobile Endpoints
     url(r'^mobile/pattern_request', mobile_views.get_config_json, name='get_config_json'),
@@ -37,6 +40,7 @@ urlpatterns = [
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
 
     # Designer webpages
+    url(r'^create/$', designer_views.index, name='index'),
 
 
 ]

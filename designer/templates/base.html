@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<HTML>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/account/js/materialize.min.js"></script> -->
+
+    {% block headerScripts %}{% endblock headerScripts %}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div name="navigation div">
+
+      <nav class="teal" role="navigation">
+
+        <div class="nav-wrapper container">
+
+          <a id="logo-container" href="#" class="brand-logo">Hype</a>
+
+          <ul class="right hide-on-med-and-down">
+
+            <li><a href="#">Navbar Link</a></li>
+            <!-- <li>just some text</li> -->
+
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+
+            <li><a href="#">Navbar Link</a></li>
+
+          </ul>
+
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+<!-- 
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <h1 class="header center teal-text text-lighten-2">Hype Lights</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">A modern responsive front-end light show based on greatness</h5>
+          </div>
+          <div class="row center">
+            
+          </div>
+          <br><br>
+
+        </div>
+      </div>
+      <div class="parallax"><img src="https://i.imgur.com/oAQFimI.jpg" alt="Unsplashed background img 1"></div>
+    </div> -->
+
+<!-- 
+    <div class="parallax-container">
+      
+      <div class="parallax">
+        <img src="https://i.imgur.com/D9J1JAE.jpg" alt="Unsplashed background img 3">
+      </div>
+
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center col s12" style="background-color: #ffffff">
+            <h5 class="header light" >A modern responsive front-end framework based on Material Design</h5>
+            <img src="http://www.sportsauthorityfieldatmilehigh.com/docs/default-source/dnc-front-pages/june-16-base-seating.gif?sfvrsn=6a7b4869_0">
+            <p>some moretext</p>
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+    
+    <div>
+
+      {%block content%}{% endblock content%}
+      
+      
+
+    </div>
+
+
+
+
+  
+
+    <script>
+      
+      (function($){
+        $(function(){
+
+          $('.button-collapse').sideNav();
+          $('.parallax').parallax();
+
+        }); // end of document ready
+      })(jQuery); // end of jQuery name space
+
+    </script>
+
+  </body>
+
+</HTML>

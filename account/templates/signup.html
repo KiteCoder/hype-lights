@@ -1,15 +1,24 @@
-{% extends base.html %}
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Sign Up
+
+{% endblock title %}
 
 {% block content %}
 
-  <form action="/account/signup/" method="POST">
-    <table id="myform">
-      <!-- ${ form.as_table() } -->
 
-      <!-- need to figure out templating forms for normal django -->
-    </table>
-    <input type="submit" class="btn btn-warning" value="Sign up now!"/>
+	<h3>Please use your preffered email address as username</h3>
+
+  <form method="post">
+   
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="teal" type="submit">Sign Up</button>
+    
   </form>
-
 
 {% endblock content %}
