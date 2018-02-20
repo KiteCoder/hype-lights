@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
 
     # Designer webpages
-    url(r'^create/$', designer_views.index, name='index'),
+    url(r'^create/$', designer_views.create, name='create'),
 
 
 ]

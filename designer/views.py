@@ -3,10 +3,10 @@ from hypertron import show_builder
 from django.shortcuts import render, redirect
 
 
-def index(request):
+def create(request):
   # return HttpResponse("Hello world, you have arrived at the index page" )
 
-  return render(request, 'index.html',)
+  return render(request, 'create.html',)
 
 def create_show(request):
 

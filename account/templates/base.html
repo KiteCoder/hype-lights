@@ -32,7 +32,7 @@
 
     <div name="navigation div">
 
-      <nav class="blue" role="navigation">
+      <nav class="teal" role="navigation">
 
         <div class="nav-wrapper container">
 
@@ -61,12 +61,19 @@
 
 
   <div id="index-banner" class="parallax-container">
+
+    <div class="parallax"><img src="https://i.imgur.com/T9hJFXZ.jpg" alt="Unsplashed background img 1"></div>
+
+
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
         <h1 class="header center teal-text text-lighten-2">Hype Lights</h1>
         <div class="row center">
           <h5 class="header col s12 light">A modern responsive front-end light show based on greatness</h5>
+
+              <a href="/create/" class="btn waves-effect waves-light">Create A Show</a>
+
         </div>
         <div class="row center">
           <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a> -->
@@ -75,7 +82,6 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="https://i.imgur.com/oAQFimI.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -96,22 +102,14 @@
       <div class="container">
         <div class="row center">
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          {%block content1%}{% endblock content1%}
         </div>
       </div>
     </div>
     <div class="parallax"><img src="https://i.imgur.com/35Lun7R.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-  <div class="row">
-      <!-- <div class="col s8 offset-s2">
-        
-      </div> -->
-      
-      <div class="col s12">
-        {%block content1%}{% endblock content1%}
-      </div>
-
-  </div>
+  
 
 
   <div class="parallax-container">
