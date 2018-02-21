@@ -24,6 +24,7 @@ urlpatterns = [
 
     # url(r'^account/login/$', account_views.login, name='login'), #very basic function, not real login yet
     url(r'^index/$', account_views.index, name='index'),
+    url(r'^$', account_views.index, name='index'),
     url(r'^signup/$', account_views.signup, name='signup'),
 
 
