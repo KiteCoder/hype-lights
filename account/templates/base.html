@@ -36,18 +36,24 @@
 
         <div class="nav-wrapper container">
 
-          <a id="logo-container" href="#" class="brand-logo">Logo</a>
+          <a id="logo-container" href="/index" class="brand-logo">Hype</a>
 
           <ul class="right hide-on-med-and-down">
 
-            <li><a href="#">Navbar Link</a></li>
+                {%block navbar%}{% endblock navbar%}
+
+
+            <!-- <li><a href="#">Navbar Link</a></li> -->
             <!-- <li>just some text</li> -->
 
           </ul>
 
           <ul id="nav-mobile" class="side-nav">
 
-            <li><a href="#">Navbar Link</a></li>
+                {%block sidenav%}{% endblock sidenav%}
+
+
+            <!-- <li><a href="#">Navbar Link</a></li> -->
 
           </ul>
 
@@ -60,29 +66,10 @@
     </div>
 
 
-  <div id="index-banner" class="parallax-container">
 
-    <div class="parallax"><img src="https://i.imgur.com/T9hJFXZ.jpg" alt="Unsplashed background img 1"></div>
+    {%block content%}{% endblock content%}
 
-
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Hype Lights</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end light show based on greatness</h5>
-
-              <a href="/create/" class="btn waves-effect waves-light">Create A Show</a>
-
-        </div>
-        <div class="row center">
-          <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a> -->
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-  </div>
+  
 
 
 
@@ -92,7 +79,7 @@
       </div> -->
   		
       <div class="col s12">
-        {%block content%}{% endblock content%}
+        
       </div>
 
   	</div>

@@ -8,8 +8,71 @@ Home
 {% endblock title %}
 
 
+{%block navbar%}
+
+    {% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} bozo!!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+   
+
+
+{% endblock navbar%}
+
+   
+
+
+{%block sidenav%}
+
+{% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+
+{% endblock sidenav%}
+
+
+
 {% block content %}
 
+<div id="index-banner" class="parallax-container">
+
+    <div class="parallax"><img src="https://i.imgur.com/T9hJFXZ.jpg" alt="Unsplashed background img 1"></div>
+
+
+
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Hype Lights</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end light show based on greatness</h5>
+
+              <a href="/create/" class="btn waves-effect waves-light">Create A Show</a>
+
+        </div>
+        <div class="row center">
+          <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a> -->
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+  </div>
 
 {% endblock content %}
 

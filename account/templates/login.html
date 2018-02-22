@@ -7,6 +7,27 @@ Login
 
 {% endblock title %}
 
+{%block navbar%}
+
+    {% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>       
+    {% endif %}
+
+   <li><a href="/login">Login</a></li>
+   <li><a href="/signup">Signup</a></li>
+   <!-- <li><a href="/logout">Logout</a></li> -->
+
+{% endblock navbar%}
+
+   
+
+
+{%block sidenav%}
+
+   <li><a href="/login">Login</a></li>
+   <li><a href="/signup">Signup</a></li>
+
+{% endblock sidenav%}
 
 {% block content %}
 

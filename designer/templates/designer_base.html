@@ -36,18 +36,24 @@
 
         <div class="nav-wrapper container">
 
-          <a id="logo-container" href="/index/" class="brand-logo">Hype</a>
+         <a id="logo-container" href="/index" class="brand-logo">Hype</a>
 
           <ul class="right hide-on-med-and-down">
 
-            <li><a href="#">Navbar Link</a></li>
+                {%block navbar%}{% endblock navbar%}
+
+
+            <!-- <li><a href="#">Navbar Link</a></li> -->
             <!-- <li>just some text</li> -->
 
           </ul>
 
           <ul id="nav-mobile" class="side-nav">
 
-            <li><a href="#">Navbar Link</a></li>
+                {%block sidenav%}{% endblock sidenav%}
+
+
+            <!-- <li><a href="#">Navbar Link</a></li> -->
 
           </ul>
 

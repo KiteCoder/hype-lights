@@ -7,6 +7,45 @@ Design Show
 
 {% endblock title %}
 
+
+{%block navbar%}
+
+    {% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+   
+
+
+{% endblock navbar%}
+
+   
+
+
+{%block sidenav%}
+
+{% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+
+{% endblock sidenav%}
+
+
 {% block content %}
 
 	<div class="container">

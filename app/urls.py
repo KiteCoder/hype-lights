@@ -23,9 +23,11 @@ urlpatterns = [
     # Account webpages
 
     # url(r'^account/login/$', account_views.login, name='login'), #very basic function, not real login yet
+    url(r'^account/index/$', account_views.index, name='index'),
     url(r'^index/$', account_views.index, name='index'),
     url(r'^$', account_views.index, name='index'),
     url(r'^signup/$', account_views.signup, name='signup'),
+    url(r'^logout_view/$', account_views.logout_view, name='logout_view'),
 
 
     # Mobile Endpoints
