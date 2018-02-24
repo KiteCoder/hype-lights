@@ -74,7 +74,7 @@ Design Show
 			   }
 			}
 
-			previewFile();  //calls the function named previewFile()
+			//previewFile();  //calls the function named previewFile()
 			</script>
 
 			<!-- <img src="http://www.sportsauthorityfieldatmilehigh.com/docs/default-source/dnc-front-pages/june-16-base-seating.gif?sfvrsn=6a7b4869_0"> -->
@@ -85,6 +85,23 @@ Design Show
 			<a href="#" class="btn">Continue</a>
 
 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			<button onclick="raphTest()">Click here for magic</button>
+			
+			<script>
+			function raphTest(){
+				var paper = Raphael(10, 50, 200, 75);
+				var rect = paper.rect(10, 10, 50, 50);
+				var circle = paper.circle(110, 35, 25);
+
+				rect.attr({fill: "green"});
+				circle.attr({fill: "blue"});	
+			}
+
+			// raphTest(); //if uncommented, this will call the function when the page loads
+							
+			</script>
+			
 	    </div>
 
 	</div>	
