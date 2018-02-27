@@ -86,7 +86,7 @@ Design Show
 
 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-			<button onclick="raphTest()">Click here for magic</button>
+			<button class="btn" onclick="raphTest()">Click here for magic</button>
 			
 			<script>
 			function raphTest(){
@@ -100,6 +100,18 @@ Design Show
 
 			// raphTest(); //if uncommented, this will call the function when the page loads
 							
+			</script>
+
+			<button onclick="tryThis()" class="btn">Crazy cool gif</button>
+
+			<script>
+				
+				function tryThis() {
+					var pa = Raphael(300, 50, 2000, 500);
+					pa.rect(20,20,320, 200, 20); 
+					var img1 = pa.image("/static/images/aminGif1.gif", 50,50, 200, 100);
+				}
+
 			</script>
 			
 	    </div>
