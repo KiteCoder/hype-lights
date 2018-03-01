@@ -50,6 +50,12 @@ Design Show
 
 	<div class="container">
 
+				
+		<button class="btn" onclick="path_extracter()">pathExtracter</button>
+				
+		<script src="/static/js/pathparser.py"></script>
+
+
 	    <div class="row center col s12" style="background-color: #ffffff">
 
 			<h5 class="header light" >Upload an SVG of the venue</h5>
@@ -77,7 +83,8 @@ Design Show
 			//previewFile();  //calls the function named previewFile()
 			</script>
 
-			<!-- <img src="http://www.sportsauthorityfieldatmilehigh.com/docs/default-source/dnc-front-pages/june-16-base-seating.gif?sfvrsn=6a7b4869_0"> -->
+
+			
 
 			<br>
 			<br><br><br><br>
@@ -96,6 +103,10 @@ Design Show
 
 				rect.attr({fill: "green"});
 				circle.attr({fill: "blue"});	
+
+				var 
+
+
 			}
 
 			// raphTest(); //if uncommented, this will call the function when the page loads
@@ -116,6 +127,23 @@ Design Show
 			
 	    </div>
 
+	    <div id="grid" >
+			<script src="/static/js/grid.js"></script>
+		<!-- Raphaël JS Map Here -->
+		</div>
+
+		<div id="map">
+			<script type="text/javascript" src="/static/js/map.js"></script>
+
+		
+
+		</div>
+
 	</div>	
+
+
+
+
+
 	 
 {% endblock content %}

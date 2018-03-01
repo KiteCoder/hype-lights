@@ -1,10 +1,13 @@
 from django.http import JsonResponse
 from hypertron import show_builder
 from django.shortcuts import render, redirect
+from xml.dom import minidom
 
 
 def create(request):
   # return HttpResponse("Hello world, you have arrived at the index page" )
+
+  print("testing if this prints")
 
   return render(request, 'create.html',)
 
@@ -72,3 +75,44 @@ def create_framepixel(request):
     show_builder.create_framepixel(row, seat, frame_order, action, show_name)
 
     return JsonResponse({'Response': 'dummy response, request should be completed'})
+
+
+def path_extracter():
+
+    svg_file = "/static/Regions_de_France.svg"
+    # svg_file = "filename"
+
+    doc = minidom.parse(svg_file)  # parseString also exists
+    path_strings = [path.getAttribute('d') for path
+                    in doc.getElementsByTagName('path')]
+    doc.unlink()
+
+    print('the url worked')
+
+    print(path_strings)
+
+    return path_strings
+
+    # svg = open("static/Regions_de_France.svg")
+    # for line in svg:
+    #     if line.startswith("<path"):
+        
+        # scribble=open("scrib1.txt")
+        # for line in scribble:
+        #     if line.startswith("<polygon"):
+        #         rightline=line.split('"')
+        # commas=rightline[13].split(' ') 
+        # newlist=[]
+        # for i in commas:
+        #     tup=i.split(',')
+        #     newlist.append((tup[0],tup[1]))
+
+    
+
+
+
+
+
+
+
+

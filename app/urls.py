@@ -44,6 +44,9 @@ urlpatterns = [
     url(r'^designer/create_grid', designer_views.create_grid, name='create_grid'),
     url(r'^designer/create_pixel', designer_views.create_pixel, name='create_pixel'),
     url(r'^designer/create_framepixel', designer_views.create_framepixel, name='create_framepixel'),
+    url(r'^designer/parse', designer_views.path_extracter, name='path_extracter'),
+
+
 
     # Designer webpages
     url(r'^create/$', designer_views.create, name='create'),
