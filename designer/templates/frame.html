@@ -1,0 +1,116 @@
+{% extends 'designer_base.html' %}
+
+
+{% block title %}
+
+Design Show
+
+{% endblock title %}
+
+
+{%block navbar%}
+
+    {% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+   
+
+
+{% endblock navbar%}
+
+   
+
+
+{%block sidenav%}
+
+{% if user.is_authenticated %}
+        <li>Welcome {{ user.username }} !!!</li>  
+        <li><a href="/logout_view">Logout</a></li> 
+
+    {% else %} 
+
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Signup</a></li>
+
+    {% endif %}
+
+
+{% endblock sidenav%}
+
+
+{% block content %}
+
+	<div class="container">
+
+		<p> we are on frame {{frame.second}}</p>
+
+		<div id="venue">
+			<script>
+				var venueRsr = Raphael('venue', '490', '490');
+				var venue = [];
+
+				{% for pixel in pixels %}
+
+
+
+					{% for second_pixel in second_pixels %}
+						{% if pixel == second_pixel.pixel %}
+
+							console.log("{{second_pixel.state}}");
+
+							var newPixel = venueRsr.{{pixel.raphael_configuration}};
+
+							{% if second_pixel.state == 'on' %}
+								newPixel.attr({"stroke-width":5, fill:"#ffffff"});
+							{% else %}
+
+								newPixel.attr({"stroke-width":5, fill:"#000000"});
+							{% endif %}
+
+							venue.push(newPixel);
+
+						{% endif %}
+
+					{% endfor %}
+
+					
+
+				{% endfor %}
+
+				for (var i = 0; i < venue.length; i++) {
+
+					venue[i].node.strokewidth = 5;
+				    // Showing off
+				    venue[i].click(function(e){
+						if(this.node.style.fill == "rgb(255, 255, 255)"){
+							this.node.style.fill = "#000000";
+						} else{
+							this.node.style.fill = "#ffffff";
+							console.log(this.node.style.fill);
+						}
+					});
+
+
+					console.log("hello")
+				}
+			</script>
+		</div>
+
+		<a href="/render_frame/{{last_frame}}">Last</a><Button>Update frame</Button><a href="/render_frame/{{next_frame}}">Next</a>
+
+	</div>	
+
+
+
+
+
+	 
+{% endblock content %}

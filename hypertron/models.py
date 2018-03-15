@@ -29,6 +29,7 @@ class Pixel(models.Model):
     row = models.IntegerField(null=False, blank=False)
     seat = models.IntegerField(null=False, blank=False)
     section = models.CharField(null=False, blank=False, max_length=2)
+    raphael_configuration = models.TextField(null=True)
 
 class SecondPixel(models.Model):
     class Meta:

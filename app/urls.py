@@ -50,6 +50,7 @@ urlpatterns = [
 
     # Designer webpages
     url(r'^create/$', designer_views.create, name='create'),
+    url(r'^render_frame/(?P<frame_id>\w+)', designer_views.render_frame, name='render_frame'),
     
 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

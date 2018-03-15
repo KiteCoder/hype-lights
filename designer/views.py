@@ -2,6 +2,29 @@ from django.http import JsonResponse
 from hypertron import show_builder
 from django.shortcuts import render, redirect
 from xml.dom import minidom
+from django.http import HttpResponse
+from hypertron import models
+
+
+def render_frame(request, frame_id):
+
+  pixels = models.Pixel.objects.all()
+  frame = models.Second.objects.get(id=frame_id)
+
+  second_pixels = models.SecondPixel.objects.filter(second=frame)
+
+  second_pixels_dict = {}
+
+  for second_pixel in second_pixels:
+    second_pixels_dict[''.join([str(second_pixel.pixel.row),str(second_pixel.pixel.seat),second_pixel.pixel.section])] = second_pixel.state
+    #second_pixels_dict[second_pixel.pixel] = second_pixel.state
+
+
+  next_frame = frame.second + 1
+  last_frame = frame.second - 1
+
+
+  return render(request, 'frame.html', {'pixels':pixels, 'frame':frame, 'next_frame':next_frame, 'last_frame':last_frame, 'second_pixels':second_pixels, 'second_pixels_dict':second_pixels_dict})
 
 
 def create(request):
