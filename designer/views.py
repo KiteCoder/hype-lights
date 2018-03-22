@@ -13,6 +13,13 @@ def render_frame(request, frame_id):
 
   second_pixels = models.SecondPixel.objects.filter(second=frame)
 
+
+  if len(second_pixels) == 0:
+    previous_frame_id = int(frame_id) - 1
+    previous_frame = models.Second.objects.get(id=previous_frame_id)
+    second_pixels =  models.SecondPixel.objects.filter(second=previous_frame)
+
+
   second_pixels_dict = {}
 
   for second_pixel in second_pixels:
@@ -138,4 +145,12 @@ def path_extracter():
 
 
 
-
+  #   previous_frame_id = int(frame_id) - 1
+  #   previous_frame = models.Second.objects.get(id=previous_frame_id)
+  #   previous_second_pixels = models.SecondPixel.objects.filter(second=previous_frame)
+  #   for previous_second_pixel in previous_second_pixels:
+  #     new_second_pixel = models.SecondPixel()
+  #     new_second_pixel.state = previous_second_pixel.state
+  #     new_second_pixel.pixel = previous_second_pixel.pixel
+  #     new_second_pixel.second = frame
+  #     new_second_pixel.save()
