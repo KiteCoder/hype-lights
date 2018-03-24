@@ -68,8 +68,13 @@ Design Show
 
 							var newPixel = venueRsr.{{pixel.raphael_configuration}};
 
+							newPixel.data('section', '{{pixel.section}}')
+								.data('row', '{{pixel.row}}')
+								.data('seat', '{{pixel.seat}}')
+								.data('state', '{{second_pixel.state}}');
+
 							{% if second_pixel.state == 'on' %}
-								newPixel.attr({"stroke-width":5, fill:"#ffffff"});
+								newPixel.attr({"stroke-width":5, fill:"#ffffff"})
 							{% else %}
 
 								newPixel.attr({"stroke-width":5, fill:"#000000"});
@@ -92,19 +97,42 @@ Design Show
 				    venue[i].click(function(e){
 						if(this.node.style.fill == "rgb(255, 255, 255)"){
 							this.node.style.fill = "#000000";
+							this.data('state', 'off')
 						} else{
 							this.node.style.fill = "#ffffff";
-							console.log(this.node.style.fill);
+							this.data('state', 'on')
 						}
 					});
 
+				}
 
-					console.log("hello")
+				function submitFrameUpdate(){
+
+					var secondPixels = []
+					for (var i = 0; i < venue.length; i++) {
+						var pixelSecond = {
+							'row':venue[i].data('row'),
+							'seat':venue[i].data('seat'),
+							'section':venue[i].data('section'),
+							'state':venue[i].data('state')
+						}
+
+
+						secondPixels.push(JSON.stringify(pixelSecond));
+
+					}
+
+					
+					$.post("/render_frame/{{frame.second}}", {'second_pixels': secondPixels});
 				}
 			</script>
 		</div>
 
-		<a href="/render_frame/{{last_frame}}">Last</a><Button>Update frame</Button><a href="/render_frame/{{next_frame}}">Next</a>
+		<a href="/render_frame/{{last_frame}}">Last</a>
+		<button onclick="submitFrameUpdate()">Update frame</button>
+		<a href="/render_frame/{{next_frame}}">Next</a>
+
+
 
 	</div>	
 

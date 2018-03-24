@@ -4,12 +4,50 @@ from django.shortcuts import render, redirect
 from xml.dom import minidom
 from django.http import HttpResponse
 from hypertron import models
+import json
 
 
 def render_frame(request, frame_id):
 
-  pixels = models.Pixel.objects.all()
+  # get frame
   frame = models.Second.objects.get(id=frame_id)
+
+  # Check if Save
+  if request.method == 'POST':
+    
+    # grab second pixels from post
+    second_pixels = request.POST.getlist("second_pixels[]")
+
+
+    for second_pixel in second_pixels:
+
+      # decode opbject
+      second_pixel = json.loads(second_pixel)
+
+      # find pixel for second pixel
+      pixel = models.Pixel.objects.filter(row=second_pixel['row']).filter(seat=second_pixel['seat']).filter(section=second_pixel['section']).first()
+
+      # find second pixel for pixel
+      update_second_pixel = models.SecondPixel.objects.filter(second=frame).filter(pixel=pixel).first()
+
+      if update_second_pixel:
+        # update frame pixel
+        update_second_pixel.state = second_pixel['state']
+        update_second_pixel.save()
+
+      else:
+        # save new 
+        new_second_pixel = models.SecondPixel()
+        new_second_pixel.state = second_pixel['state']
+        new_second_pixel.pixel = pixel
+        new_second_pixel.second = frame
+        new_second_pixel.save()
+
+
+
+  # Get Pixel information
+
+  pixels = models.Pixel.objects.all()
 
   second_pixels = models.SecondPixel.objects.filter(second=frame)
 
